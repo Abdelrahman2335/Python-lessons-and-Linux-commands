@@ -1,0 +1,29 @@
+var=3
+echo $var
+3
+
+If I exit the terminal and open a new terminal, this shell variable will 
+disappear. If I want to use this variable in a shell script, it won’t work. Similarly, if I switch user 
+(and thus initiating a new shell with this user), 
+this shell variable won’t be available.
+
+The export command in Linux is used for creating environment variables. You can use it like this:
+	expor var=5
+echo $var
+5
+
+So, now if I use the export command on the variable var here, it will become an environment variable and it will be available to all the subshells, users and shell scripts in this session.
+
+You can check all the environment variables using the (printenv) command.
+
+Make exported shell variables ‘permanent’ with bashrc file:
+
+If you are using bash shell, you should have a bashrc file at ~/.bashrc. You can either edit this file in a text editor like Vim(vi command) or you can just append export var=3 (or whatever you are exporting) to this file.
+
+for more information read this it's very short so do it if you get lose:
+	https://linuxhandbook.com/export-command/
+
+to remove a variable from exported list:
+	export -n var_name
+	or
+	unser var_name

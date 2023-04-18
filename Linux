@@ -1,0 +1,226 @@
+#this flie will cover most of what you have learned in kali linux (commands)
+
+
+ps: process status (What's happing)
+
+to use Linux as root use (sudo su#)
+
+id: tells all about you
+
+groups: to see all the groups the current user is part of it.
+
+hostname: The host name 
+
+passwd: TO change password
+
+uname(-r -a...etc): It's very usefull, you can know about kernel name, network host, the vesion of your os (-v), the machine hardware name (-m) and more.
+
+ifconfig -s: Network stuff
+
+ip: more network stuff
+
+netstat: The status of your network
+
+ss: session stuff (similar to "netstat")
+
+who: It tells you who currently loggend in. (man it!) 
+
+env: enviroment variables
+
+lsblk:list blocks hard drive stuff 
+
+lsusb: are there is any usbs pugged in ?
+
+lsof: this will list all the open files
+
+man: it tells you about any command you want and description and 
+how to use it etc...
+
+you can use -h or --help after any command to get help 
+
+aprops: it helps you to find the command that you want to use 
+
+sudo adduser: to add user and remmember (adduser is better than useradd)
+
+sudo userdel: to delete any user
+
+visudo: is very dangerous
+
+evry user have home and group (The group is the same name of the user)
+
+sudo groupadd: to add a new group
+ 
+no user have access to sudo only kali have this access.
+so to add some users we can add group in the visudo file than
+add users in this group.
+
+to add user to group (sudo usermod -G user_name)...BUT WAIT!!
+
+if you go with just -G you will eliminate this user from all other groups 
+so to we will use (-aG)
+
+to remove or delete user from a group use 
+(sudo gpasswd -d user_name group_name)
+
+to delete a group we use (sudo groupdel group_name)this will delete only 
+the group
+
+chmod: modify file access rights
+su: temporarily become the superuser
+sudo: temporarily become the superuser
+chown: change file ownership
+chgrp: change a file's group ownership
+
+
+rwx rwx rwx = 111 111 111
+rw- rw- rw- = 110 110 110
+rwx --- --- = 111 000 000
+and so on...
+rwx = 7
+rw- = 6
+r-x = 5
+r-- = 4
+
+
+we can cahnge the owner of a file by using the "chown" command this
+command is used like this:
+
+> sudo chown (username) some_file
+
+we can change the ownership of a file or directory may be changed with
+"chgrp" this command is used like this:
+
+> sudo chgrp new_group some_file
+
+
+use ">" to print the output in file. for example ls > test_file will 
+print the result in this file.
+but if you use ">" again will delete the data inside this file 
+so you have to use ">>" to add something and don't delete anything.
+
+
+sort: is sorting data(numbers or words)use -h,-b,-f,...etc 
+to see the power of this commend.
+
+uniq: This is very useful command you can given a sorted stream of data 
+from standard input, it removes udplicate lines of data(i.e.,it makes
+sure that evert line is unique )
+
+grep: This is very powerful command you can use it to seach for any word 
+in any file(use -i to search for the word in UPPER and small cases, 
+and you can use * to seach in multiple files)
+https://linuxhandbook.com/grep-command-cheatsheet/
+
+
+fmt: It puts all words in a single line and prints on sidout.
+
+
+you can display specific line in the file by many different ways:
+	
+#	head -x file_name | tail +x 
+#	sed -n '10p' file_name
+#	awk 'NR==4' file_name
+want to Learn more ?
+	https://linuxhandbook.com/display-specific-lines/
+
+if you want to delete file named(x.js and y.js) but you have some 
+directories ends with the same end (c.js and d.js) so you can do this:
+
+#	find . -type f(files) -name "*.js" -delete
+usefull link:
+	https://linuxhandbook.com/find-with-regex/
+	
+To display lines containing the pattern "root" and 4 lins after them in 
+the file /etc/passwd:
+	grep  -i "root" -A 3  /etc/passwd 
+for before "" "" "" 	-B
+for after and before 	-C
+
+Display all the lines in the file /etc/passwd that do not contain 
+the pattern “bin”:
+
+	grep -i -v "bin" /etc/passwd
+
+	   -v :  Invert the sense of matching, to select non-matching lines.
+
+to serach for empty folder or file use find command:
+
+	find -type d(directories),f(files) -empty 
+
+Delete Empty Files and Directories using Find Command:
+
+	find -empty -type d,f -delete
+
+if you want to know more about find visit this site:
+
+	https://linuxhandbook.com/find-empty-directories/
+
+
+
+
+The find exec is nothing but allows you to execute custom operations 
+such as running scripts and executing programs on search results.
+
+	-type f -empty -print0 -exec rm -v "{}" \;
+
+And if you want to remove directories, the given command should work 
+just fine:
+	  -type d -empty -print0 -exec rmdir -v "{}" \;
+
+
+
+xargs can take input from the standard input or even consider the output of 
+another command as input and can use it as a command:
+	
+	cat ls_output | xargs du -h
+
+if you want to learn more about xargs visit this site:
+	https://linuxhandbook.com/xargs-command/
+This is about find read them will:
+
+	https://linuxhandbook.com/find-with-regex/
+	https://linuxhandbook.com/find-modified-files/
+
+printf : printf "Hello Mr. %s, your room number is %d. \n" 'Mohamed Khalid' 308
+	or:
+	printf "My brother %s is %d years old.\n" Mohamed 21
+
+	 This is where printf command helps you. The bash printf command 
+	operates like the printf command in C/C++ programming language.
+	The first argument %s expects a string, %d expects a decimal 
+	integer, just like C/C++. Don't worry if you are not familiar 
+	with C/C++. 
+
+sudo apt list : list packages based on package names
+	 search : search in package descriptions 
+you can learn more about apt just type:
+	sudo apt -h
+
+locate : is a Unix utility which serves to find files on filesystems.
+It searches through a prebuilt local database of all files on the
+filesystem generated by the "updatedb" command. Note it is essential to
+update the database as recent files saved over a period of fewer than
+24 hours are not updated into the database by default and the database
+is updated once within 24 hours span.  
+
+
+which : if you are wondering where exactly is a certain program is
+located, simply use which on it. (try this with python or java) 
+The which command locates an executable files in your shell's search path.
+
+Note that which only works on executable files. So you should use it 
+only with the argument that you can run. For example, you install Java 
+through the JDK package but you don’t run a command called ‘jdk’, you 
+run ‘java’. So you use which command on java, not jdk.
+
+If the which command doesn’t find the executable in the current path,
+it returns nothing.
+
+ find command is a more aggressive search tool than locate or which. 
+Find is able to recursively search any given path for various files. 
+Using the file command we can search for files by name, owner, group, 
+permissions, type, size, time modified, date and various other criteria. 
+The find command is highly efficient but this efficiency comes at a cost 
+of time. (find : gave me something and I will get this ass)
+
+https://www.geeksforgeeks.org/difference-between-locate-which-and-find-command-in-linux/
