@@ -224,3 +224,69 @@ The find command is highly efficient but this efficiency comes at a cost
 of time. (find : gave me something and I will get this ass)
 
 https://www.geeksforgeeks.org/difference-between-locate-which-and-find-command-in-linux/
+
+
+Here we will talk about Firewall so, LET'S GO IT :D
+
+
+Here are the general steps to check your firewall settings using iptables:
+
+sudo iptables -L
+
+This will display a list of firewall rules, including the policy for 
+each chain (e.g., ACCEPT, DROP, or REJECT).
+
+You can also check the status of the firewall by running the 
+following command:
+
+sudo iptables -S
+
+
+sudo ufw status
+
+This will show the current staus of the firewall and  the list if 
+allowed and blocked connections.
+
+If you want to view the detailed information about your firewall 
+settings, you can run the following command:
+
+	sudo ufw show raw
+
+This will display the raw configuration of your firewall in 
+a human-readable format.
+
+To modify the firewall settings, you can use the ufw command. For example, to allow incoming SSH connections, you can run the 
+following command:
+
+sudo ufw allow ssh
+
+If the ufw command is not found, it's possible that the Uncomplicated 
+Firewall package is not installed on your Linux system or is not 
+supported by your distribution.
+
+To check if ufw is installed, you can run the following command in 
+your terminal:
+
+which ufw
+
+If the command returns nothing, it means that `ufw` is not installed on 
+your system. In that case, you can install by this command:
+
+sudo apt-get install ufw
+
+so to enable the firewall and apply teh default set of rules that 
+come whit `ufw`
+
+After enabling `ufw` you can verify its status by running the 
+following command:
+
+sudo ufw status
+
+This should show that the firewall is now active and the list of allowed 
+and blocked connections.
+
+Note that after enabling ufw, it's important to configure the firewall 
+rules to allow the necessary traffic while blocking the unwanted traffic. 
+You can refer to the ufw documentation for more information on configuring
+the firewall rules.
+
