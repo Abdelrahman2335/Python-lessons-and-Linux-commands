@@ -307,4 +307,24 @@ rules to allow the necessary traffic while blocking the unwanted traffic.
 You can refer to the ufw documentation for more information on configuring
 the firewall rules.
 
+To change the environment of Linux you can use this command:
 
+	sudo dpkg-reconfigure (lightdm or somthing else)
+
+this will change the first page you see it when you open the PC, that ask you
+about the username and password
+
+You can also use this one:
+	sudo update-alternatives --config x-session-manager
+
+TO know the current environment you use:
+	echo $DESKTOP_SESSION 
+
+also you can use this command:
+	echo $XDG_CURRENT_DESKTOP
+
+The different between DESKTOP_SESSION and XDG_CURRENT_DESKTOP is 
+
+$XDG_CURRENT_DESKTOP provides a standardized desktop name based on the 
+XDG specifications, while $DESKTOP_SESSION may vary depending on the specific
+desktop environment or session manager being used.
