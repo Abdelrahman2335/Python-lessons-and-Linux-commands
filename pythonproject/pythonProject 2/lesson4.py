@@ -1,7 +1,7 @@
 x = (["a", "b", "c", "d", "e","e","e"])
 
-#To know the type of x:
-# print(type(x))
+# To know the type of x:
+print(type(x))
 
 y = {5,10,15,25,20,30}
 
