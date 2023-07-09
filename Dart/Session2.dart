@@ -18,6 +18,7 @@
 //
 // }
 
+
 // int sum({int? x = 0, int? y = 0, int? z = 0}) {
 //   return x! + y! + z!;
 // }
@@ -31,11 +32,11 @@
 // int sum(int x ,int y,[int z = 0 ]) {
 //   return x + y + z;
 // }
-//
+
 // void main(){
-//
+
 // print(sum(2,3));
-//
+
 // }
 
 
@@ -44,26 +45,56 @@
 // void x() => print("Hello World!");
 
 
-//
+
 // class Car{
 //   late String modelYear;
 //   late String type;
 //   late String color;
 //   void start(){
-//     print("The color of the ${type} is ${color}");
+//     print("The color of the ${type} is ${color} and the model year is ${modelYear}");
 //   }
 // }
 // void main(){
-//   Car bmw=Car();
+//   Car one=Car();
 //
-//   bmw.type="MER";
-//   bmw.color="Black";
-//   bmw.modelYear="2020";
+//   one.type="MER";
+//   one.color="Black";
+//   one.modelYear="2020";
 //
-//   bmw.start();
+//   one.start();
 //
 // }
 
+// // this is was just practise
+
+// import 'dart:io';
+//
+// class car{
+//   late String modelYear;
+//   late String type;
+//   late String color;
+//   void start(){
+//     print("this ${type} is ${color} and ${modelYear} model");
+//   }
+// }
+//
+// void main(){
+//   car tow = car();
+//
+//   print("Please enter the type of the car:");
+//
+//   tow.type= stdin.readLineSync()!;
+//
+//   print("Please enter the color of the car:");
+//
+//   tow.color= stdin.readLineSync()!;
+//
+//   print("please enter the model of the car:");
+//
+//   tow.modelYear=stdin.readLineSync()!;
+//
+//   tow.start();
+// }
 
 // class person {
 //   late String name;
@@ -74,8 +105,10 @@
 //
 //   void info(){
 //     print("Student name is ${name} he is ${age} years old and he is living in ${home}.");
+//     // print("He is a student at the faculty of ${faculty} and he is level ${level}.");
+//
 //   }
-//   void moreinfo(){
+//   void moreInfo(){
 //     print("He is a student at the faculty of ${faculty} and he is level ${level}.");
 //   }
 // }
@@ -90,11 +123,11 @@
 //   info.level = "1";
 //
 //   info.info();
-//   info.moreinfo();
+//   info.moreInfo();
 // }
 
 
-//
+
 // class Employee
 // {
 //
@@ -144,6 +177,6 @@ void main(){
   customer info = customer(
       name: "Khalid",
       serves: "\"failed internet connection\",\n",
-      date: "Thu, 11 May", feedback: "Problem solved successfully");
+      date: "Thu, 11 May", feedback: "Problem solved successfully thanks!");
   info.output();
 }

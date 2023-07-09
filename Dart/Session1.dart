@@ -98,25 +98,26 @@ void main() {
 //   print(value);
 
 // LIst:
-  List studentNames = ["Mohamed","Nagi","Abdelrahman","Sayed"];
-  List <String> studentNames2 = ["Mohamed", "Nagi", "Abdelrahman", "Sayed"];
-  print(studentNames);
+//   List studentNames = ["Mohamed","Nagi","Abdelrahman","Sayed"];
+//   List <String> studentNames2 = ["Mohamed", "Nagi", "Abdelrahman", "Sayed"];
+//   print(studentNames);
+//
+//   studentNames.add("Hagar");
+//
+//   studentNames.remove("Sayed");
+//
+//   studentNames.removeAt(0);
+//
+//   int length = studentNames2.length;
+//
+//   print(length);
+//
+//   print(studentNames);
+//
+//   studentNames[0] = "yasser";
+//
+//   print(studentNames);
 
-  studentNames.add("Hagar");
-
-  studentNames.remove("Sayed");
-
-  studentNames.removeAt(0);
-
-  int length = studentNames2.length;
-
-  print(length);
-
-  print(studentNames);
-
-  studentNames[0] = "yasser";
-  
-  print(studentNames);
 
 // Set:
 //   Set <int> mySet = {1,2,3,4};
@@ -131,13 +132,14 @@ void main() {
 //   // to remove elements from a Set...
 //   mySet.remove(4);
 //   print(mySet);
-//   print(EmptySet.contains("Ali"));
+//   print(EmptySet.contains("Ali"));  // contains is pool you are asking dart if ali in the EmptySet or not
 //   print(EmptySet.contains("Alia"));
+//
 //   // What is union ?
 //   Set <int> set1 = {1, 2, 3};
 //   Set <int> set2 = {2, 3, 4};
 //   Set <int> set3 = set1.union(set2);
-//   print(set3);
+// print(set3);
 
 // Note that Sets are typically faster than Lists for checking whether an element is in the collection or not,
 // as they use hash codes to store and look up elements.
@@ -149,59 +151,67 @@ void main() {
 //   EmptyMap['Apple'] = 1;
 //   EmptyMap['cherry'] = 2;
 //   EmptyMap['banana'] = 3;
-//
-// // convert Map to List:
+
+// convert Map to List:
 //   List <String> x = myMap.keys.toList();
 //   List <int> y = myMap.values.toList();
 //   print("Lovely output $x and $y.");
-//
+
+
 // for (var element in myMap.entries) {
 //   print('${element.value}: ${element.key}');
 // }
 
-// for loop:
-  // int counter = 0;
-  // for(;counter < 10;)
-  // {
-  //   print("Hello world!");
-  //   counter++;
-  // }
+
+// // for loop:
+//   int counter = 0;
+//   for(;counter < 10;)
+//   {
+//     print("Hello world!");
+//     counter++;
+//   }
 
 // for each:
-  // Map:
-  // myMap.forEach((String key,int value)
-  // {
-  //   print("${key}'s number = ${value}");
-  // });
+//   Map:
+//   myMap.forEach((String key,int value)
+//   {
+//     print("${key}'s number = ${value}");
+//   });
 
-// for in:
-  // for (String x in studentNames2){
-  //   print(x);
-  // }
+
+// // for in:
+//   List <String> studentNames2 = ['1, 2, 3, 4, 5, 6, 7, 8, 9, 10'];
+//
+//   for (String x in studentNames2){
+//     print(x);
+//   }
 
 //while:
 //   int x = 0;
-//   while(x < 5){
+//   while(x <= 5){
 //     print("This is while loop I will stop after 5 :D");
 //     x++;
 // }
 
-  // bool Connected = false;
+  // bool Connected = false; // change this false to true and see what will happen ^-^
+
+
   // while(Connected){
   //   print("Notification");
+  //   break;
   // }
 
 // do..while:
-//   do{
+//   do{ // do will print Notification at lest one time if it's false, but while see the condition first then take action, unlike do take the action first than see the condition in the second time.
 //     print("Notification");
 //   }while(Connected);
 
-//Continue:
-//   for(int x = 0; x < 10; x++){
-//     if( x == 5){
-//       continue;
-//     }
-//     print(x);
-//   }
+// Continue:
+  for( int y = 0; y <= 10; y++){
+    if(y % 2 == 1){
+      continue;
+    }
+    print(y);
+  }
 
 }
